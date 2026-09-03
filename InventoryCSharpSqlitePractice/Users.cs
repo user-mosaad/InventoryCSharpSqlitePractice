@@ -23,10 +23,10 @@ class User
     /// <param name="username"></param>
     /// <param name="password"></param>
     /// <param name="account_type"></param>
-    public static void AddUser(string username, string password, AccountType account_type)
+    public static void AddUser(string username, string password, string account_type)
     {
         string connectionString = "Data Source=RBS_Retail.db";
-
+        
         string addUserSql = @"
             INSERT INTO Users (username, password, account_type)
             VALUES (@username, @password, @account_type);";
@@ -88,7 +88,7 @@ class User
     /// </summary>
     /// <param name="user_id"></param>
     /// <param name="new_account_type"></param>
-    public static void ChangeAccountType(int user_id, AccountType new_account_type)
+    public static void ChangeAccountType(int user_id, string new_account_type)
     {
         string connectionString = $"Data Source=RBS_Retail.db";
 
